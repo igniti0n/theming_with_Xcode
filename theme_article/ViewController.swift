@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private lazy var mainView = MainView()
+    
+    override func loadView() {
+        super.loadView()
+        view = mainView
     }
-
-
+    
+    func getCurrentTheme() -> String {
+        traitCollection.userInterfaceStyle == .light ? "light" : "dark"
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        // Do some updates
+        mainView.updateView(with: traitCollection.userInterfaceStyle)
+    }
 }
-
