@@ -1,4 +1,4 @@
-# theming_with_Xcode
+# Theming using Xcode
 Code for article about basic theming using mostly Xcode assets
 
 #### Article
